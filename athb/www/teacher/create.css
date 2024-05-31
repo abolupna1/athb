@@ -1,0 +1,27 @@
+
+#form-teacher{
+    margin-top: 200px;
+}
+
+.form-check-label {
+    margin-right: 30px !important;
+  }
+
+  #gridCheck {
+    margin-top: 7px !important;
+  }
+
+  #form-teacher button{
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 1px;
+    padding: 10px 30px;
+    border-radius: 50px;
+    transition: 0.5s;
+    color: #fff;
+    background: #00A8C9;
+  }
+
+  #form-teacher button:hover {
+    background: #3978BD;
+  }

@@ -1,0 +1,299 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-22 13:37:34.656461",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "identification_information_tab",
+  "first_name",
+  "nationality",
+  "current_country",
+  "column_break_ufpn",
+  "father_name",
+  "last_name",
+  "gender",
+  "city",
+  "full_name",
+  "tab_2_tab",
+  "email",
+  "user",
+  "column_break_yzjn",
+  "mobile_number",
+  "section_break_wdnj",
+  "address",
+  "qualifications_and_experience_tab",
+  "academic_qualification",
+  "column_break_qngw",
+  "teaching_quran_hours",
+  "quran_certificates_section",
+  "quran_certificates",
+  "seven_readings",
+  "hafs",
+  "warsh",
+  "languages_section",
+  "arabic",
+  "english",
+  "french",
+  "urdu",
+  "section_wish",
+  "wish_ten_readings",
+  "wish_seven_readings",
+  "wish_hafs",
+  "wish_warsh",
+  "preferences_tab",
+  "working_hours_day"
+ ],
+ "fields": [
+  {
+   "fieldname": "identification_information_tab",
+   "fieldtype": "Tab Break",
+   "label": "Identification information"
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ufpn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tab_2_tab",
+   "fieldtype": "Tab Break",
+   "label": "Contact Information"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email",
+   "no_copy": 1,
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_yzjn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Mobile Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_wdnj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "\nMale\nFemale",
+   "reqd": 1
+  },
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Link",
+   "label": "Nationality",
+   "options": "Country",
+   "reqd": 1
+  },
+  {
+   "fieldname": "current_country",
+   "fieldtype": "Link",
+   "label": "Current Country",
+   "options": "Country",
+   "reqd": 1
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City",
+   "reqd": 1
+  },
+  {
+   "fieldname": "qualifications_and_experience_tab",
+   "fieldtype": "Tab Break",
+   "label": "Qualifications And Experience"
+  },
+  {
+   "fieldname": "academic_qualification",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Academic Qualification",
+   "options": "\nHigh School\nUniversity\nMaster's degree\nPh.D",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_qngw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "preferences_tab",
+   "fieldtype": "Tab Break",
+   "label": "Preferences"
+  },
+  {
+   "fieldname": "teaching_quran_hours",
+   "fieldtype": "Int",
+   "label": "Number of years of experience in teaching the Qur\u2019an",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "working_hours_day",
+   "fieldtype": "Int",
+   "label": "Number of expected working hours per day",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "is_virtual": 1,
+   "label": "Full Name"
+  },
+  {
+   "default": "0",
+   "fieldname": "quran_certificates",
+   "fieldtype": "Check",
+   "label": "Ten Readings"
+  },
+  {
+   "fieldname": "quran_certificates_section",
+   "fieldtype": "Section Break",
+   "label": "Quran certificates"
+  },
+  {
+   "default": "0",
+   "fieldname": "seven_readings",
+   "fieldtype": "Check",
+   "label": "Seven Readings"
+  },
+  {
+   "default": "0",
+   "fieldname": "hafs",
+   "fieldtype": "Check",
+   "label": "Hafs"
+  },
+  {
+   "default": "0",
+   "fieldname": "warsh",
+   "fieldtype": "Check",
+   "label": "Warsh"
+  },
+  {
+   "fieldname": "languages_section",
+   "fieldtype": "Section Break",
+   "label": "Languages"
+  },
+  {
+   "default": "0",
+   "fieldname": "arabic",
+   "fieldtype": "Check",
+   "label": "Arabic"
+  },
+  {
+   "default": "0",
+   "fieldname": "english",
+   "fieldtype": "Check",
+   "label": "English"
+  },
+  {
+   "default": "0",
+   "fieldname": "french",
+   "fieldtype": "Check",
+   "label": "French"
+  },
+  {
+   "default": "0",
+   "fieldname": "urdu",
+   "fieldtype": "Check",
+   "label": "Urdu"
+  },
+  {
+   "fieldname": "section_wish",
+   "fieldtype": "Section Break",
+   "label": "The level at which you wish to read and your test will be determined accordingly"
+  },
+  {
+   "default": "0",
+   "fieldname": "wish_ten_readings",
+   "fieldtype": "Check",
+   "label": "Wish Ten Readings"
+  },
+  {
+   "default": "0",
+   "fieldname": "wish_seven_readings",
+   "fieldtype": "Check",
+   "label": "Wish Seven Readings"
+  },
+  {
+   "default": "0",
+   "fieldname": "wish_hafs",
+   "fieldtype": "Check",
+   "label": "Wish Hafs"
+  },
+  {
+   "default": "0",
+   "fieldname": "wish_warsh",
+   "fieldtype": "Check",
+   "label": "Wish Warsh"
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User"
+  },
+  {
+   "fieldname": "father_name",
+   "fieldtype": "Data",
+   "label": "Father Name",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-31 08:45:52.181706",
+ "modified_by": "Administrator",
+ "module": "athb",
+ "name": "Teacher",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

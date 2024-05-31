@@ -1,0 +1,238 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-26 09:28:34.029945",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "hero_tab",
+  "hero_image",
+  "info_url",
+  "about_tab",
+  "about",
+  "our_vision",
+  "our_message",
+  "section_break_atyu",
+  "google_store",
+  "column_break_apim",
+  "apple_store",
+  "features_tab",
+  "features",
+  "counts_tab",
+  "count_teachers",
+  "count_session",
+  "column_break_toim",
+  "count_students",
+  "count_country",
+  "details_tab",
+  "testimonials_tab",
+  "testimonials",
+  "faq_tab",
+  "faq",
+  "contact_tab",
+  "address",
+  "mobile",
+  "facebook",
+  "youtube",
+  "column_break_kkqm",
+  "email",
+  "twitter",
+  "linkedin",
+  "instgram"
+ ],
+ "fields": [
+  {
+   "fieldname": "hero_tab",
+   "fieldtype": "Tab Break",
+   "label": "Hero"
+  },
+  {
+   "fieldname": "about_tab",
+   "fieldtype": "Tab Break",
+   "label": "About"
+  },
+  {
+   "fieldname": "features_tab",
+   "fieldtype": "Tab Break",
+   "label": "Features"
+  },
+  {
+   "fieldname": "counts_tab",
+   "fieldtype": "Tab Break",
+   "label": "Counts"
+  },
+  {
+   "fieldname": "details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "testimonials_tab",
+   "fieldtype": "Tab Break",
+   "label": "Testimonials"
+  },
+  {
+   "fieldname": "faq_tab",
+   "fieldtype": "Tab Break",
+   "label": "Faq"
+  },
+  {
+   "fieldname": "contact_tab",
+   "fieldtype": "Tab Break",
+   "label": "Contact"
+  },
+  {
+   "fieldname": "hero_image",
+   "fieldtype": "Attach Image",
+   "label": "Hero Image"
+  },
+  {
+   "fieldname": "about",
+   "fieldtype": "Small Text",
+   "label": "about"
+  },
+  {
+   "fieldname": "our_vision",
+   "fieldtype": "Small Text",
+   "label": "Our vision"
+  },
+  {
+   "fieldname": "our_message",
+   "fieldtype": "Small Text",
+   "label": "Our message"
+  },
+  {
+   "fieldname": "google_store",
+   "fieldtype": "Data",
+   "label": "Google Store"
+  },
+  {
+   "fieldname": "apple_store",
+   "fieldtype": "Data",
+   "label": "Apple Store"
+  },
+  {
+   "fieldname": "section_break_atyu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_apim",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "features",
+   "fieldtype": "Table",
+   "label": "Features",
+   "options": "Athb Features"
+  },
+  {
+   "fieldname": "count_teachers",
+   "fieldtype": "Int",
+   "label": "Count Teachers "
+  },
+  {
+   "fieldname": "count_session",
+   "fieldtype": "Int",
+   "label": "Count Session"
+  },
+  {
+   "fieldname": "count_students",
+   "fieldtype": "Int",
+   "label": "Count Students"
+  },
+  {
+   "fieldname": "count_country",
+   "fieldtype": "Int",
+   "label": "Count Country"
+  },
+  {
+   "fieldname": "column_break_toim",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "testimonials",
+   "fieldtype": "Table",
+   "label": "Testimonials",
+   "options": "Athb Testimonials"
+  },
+  {
+   "fieldname": "faq",
+   "fieldtype": "Table",
+   "label": "Faq",
+   "options": "Athb Faq"
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "label": "Mobile"
+  },
+  {
+   "fieldname": "column_break_kkqm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "fieldname": "twitter",
+   "fieldtype": "Data",
+   "label": "Twitter"
+  },
+  {
+   "fieldname": "facebook",
+   "fieldtype": "Data",
+   "label": "Facebook"
+  },
+  {
+   "fieldname": "linkedin",
+   "fieldtype": "Data",
+   "label": "LinkedIn"
+  },
+  {
+   "fieldname": "youtube",
+   "fieldtype": "Data",
+   "label": "Youtube"
+  },
+  {
+   "fieldname": "instgram",
+   "fieldtype": "Data",
+   "label": "Instgram"
+  },
+  {
+   "fieldname": "info_url",
+   "fieldtype": "Data",
+   "label": "Info Url"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-28 09:49:55.519602",
+ "modified_by": "Administrator",
+ "module": "athb",
+ "name": "Landing Page",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

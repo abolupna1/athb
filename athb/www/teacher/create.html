@@ -1,0 +1,183 @@
+{% extends "templates/web.html" %}
+{% set title =  "انشاء معلم" %}
+
+{% block page_content %}
+
+
+
+
+
+<div id="app">
+
+  <div id="form-teacher" class=" card">
+    <div class="card-body">
+      <h5 class="card-title mb-5">استمارة  تسجيل معلم
+        {{ 'logged-in' if frappe.session.user != 'Guest' else 'logged-out'}}
+        [%message%]
+      </h5>
+
+      <form class="row g-3">
+        <div class="col-md-4">
+          <label for="first_name"  class="form-label">اﻹسم اﻷول</label>
+          <input type="text" name="first_name" class="form-control form-control-lg" id="first_name">
+        </div>
+        <div class="col-md-4">
+          <label for="last_name"  class="form-label"> اسم اﻷب</label>
+          <input type="text" name="last_name" class="form-control form-control-lg" id="last_name">
+        </div>
+        <div class="col-md-4">
+          <label for="family_name"  class="form-label">اسم العائلة </label>
+          <input type="text" name="family_name" class="form-control form-control-lg" id="family_name">
+        </div>
+        <div class="col-md-4">
+          <label for="gender" class="form-label ">الجنس</label>
+          <select id="gender" name="gender" class="form-select form-select-lg">
+            <option selected>Choose...</option>
+            <option>...</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="nationality" class="form-label ">الجنسية</label>
+          <select id="nationality" name="nationality" class="form-select form-select-lg">
+            <option selected>Choose...</option>
+            <option>...</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="current_country" class="form-label ">الدولة الحالية</label>
+          <select id="current_country" name="current_country" class="form-select form-select-lg">
+            <option selected>Choose...</option>
+            <option>...</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="city"  class="form-label">المدينة الحالية  </label>
+          <input type="text" name="city" class="form-control form-control-lg" id="city">
+        </div>
+        <div class="col-md-4">
+          <label for="email" class="form-label">اﻹيميل</label>
+          <input type="email" class="form-control form-control-lg" id="email">
+        </div>
+        <div class="col-md-4">
+          <label for="mobile_number"  class="form-label">رقم الجوال   </label>
+          <input type="mobile_number" name="mobile_number" class="form-control form-control-lg" id="mobile_number">
+        </div>
+
+        <div class="col-md-4">
+          <label for="academic_qualification" class="form-label ">المؤهل العلمي</label>
+          <select id="academic_qualification" name="academic_qualification" class="form-select form-select-lg">
+            <option selected>Choose...</option>
+            <option>...</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="teaching_quran_hours"  class="form-label">ساعات التعليم اليومية المتوقعة    </label>
+          <input type="teaching_quran_hours" name="teaching_quran_hours" class="form-control form-control-lg" id="mobile_number">
+        </div>
+        <div class="col-md-4">
+          <label for="teaching_quran_hours"  class="form-label">ساعات التعليم اليومية المتوقعة    </label>
+          <input type="teaching_quran_hours" name="teaching_quran_hours" class="form-control form-control-lg" id="mobile_number">
+        </div>
+        <div class="col-12"></div>
+
+        <div class="col-md-4">
+          <label for="teaching_quran_hours"  class="form-label">ساعات التعليم اليومية المتوقعة    </label>
+
+          <div class="form-check">
+          <p></p>
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              Check me out
+            </label>
+          </div>
+          <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                Check me out
+              </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                  Check me out
+                </label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="gridCheck">
+                  <label class="form-check-label" for="gridCheck">
+                    Check me out
+                  </label>
+                </div>
+        </div>
+        <div class="col-md-4">
+          <label for="teaching_quran_hours"  class="form-label">ساعات التعليم اليومية المتوقعة    </label>
+
+          <div class="form-check">
+          <p></p>
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              Check me out
+            </label>
+          </div>
+          <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                Check me out
+              </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                  Check me out
+                </label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="gridCheck">
+                  <label class="form-check-label" for="gridCheck">
+                    Check me out
+                  </label>
+                </div>
+        </div>
+        <div class="col-md-4">
+          <label for="teaching_quran_hours"  class="form-label">ساعات التعليم اليومية المتوقعة    </label>
+
+          <div class="form-check">
+          <p></p>
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              Check me out
+            </label>
+          </div>
+          <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                Check me out
+              </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                  Check me out
+                </label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="gridCheck">
+                  <label class="form-check-label" for="gridCheck">
+                    Check me out
+                  </label>
+                </div>
+        </div>
+        <div class="col-md-3 mt-5">
+          <button type="submit" class="btn btn-block">حفظ اﻹستمارة</button>
+          <button @click="getMass" type="button" class="btn btn-block">getMass اﻹستمارة</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script  src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+
+
+{% endblock %}

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>عذب</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <meta name="language" content="ar">
+
+  <link rel="shortcut icon"
+  href="/assets/erpnext/images/erpnext-favicon.svg" type="image/x-icon">
+<link rel="icon" href="/assets/erpnext/images/erpnext-favicon.svg" type="image/x-icon">
+<link type="text/css" rel="stylesheet" href="/assets/frappe/dist/css/desk.bundle.S74KDG3O.css">
+<link type="text/css" rel="stylesheet" href="/assets/erpnext/dist/css/erpnext.bundle.NICL42N2.css">
+
+  <!-- Favicons -->
+  <link href="/assets/athb/theme/img/favicon.png" rel="icon">
+  <link href="/assets/athb/theme/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  
+  <!-- Vendor CSS Files -->
+  <link href="/assets/athb/theme/vendor/aos/aos.css" rel="stylesheet">
+  <link  href="/assets/athb/theme/vendor/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link href="/assets/athb/theme/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/athb/theme/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/assets/athb/theme/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/assets/athb/theme/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/assets/athb/theme/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/assets/athb/theme/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Bootslander
+  * Template URL: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+  <script>
+		window.frappe = {};
+		frappe.ready_events = [];
+		frappe.ready = function(fn) {
+			frappe.ready_events.push(fn);
+		}
+		window.dev_server = {{ dev_server }};
+		window.socketio_port = {{ (frappe.socketio_port or 9000) }};
+		window.show_language_picker = {{ show_language_picker or 'false' }};
+	</script>
+</head>
+
+<body frappe-session-status="{{ 'logged-in' if frappe.session.user != 'Guest' else 'logged-out'}}" data-path="{{ path | e }}" {%- if template and template.endswith('.md') %} frappe-content-type="markdown" {%- endif %} class="{{ body_class or ''}}">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex align-items-center justify-content-between">
+      
+      <div class="logo">
+        <h1><a href="/"><img src="/assets/athb/theme/img/logo.png" alt="logo"></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="/assets/athb/theme/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">الرئيسية</a></li>
+          <li><a class="nav-link scrollto" href="#about">عن عذب</a></li>
+          <li><a class="nav-link scrollto" href="#features">لماذا عذب؟</a></li>
+          <li><a class="nav-link scrollto" href="#pricing">اﻷسعار</a></li>
+          <li><a class="nav-link scrollto" href="#contact">اتصل بنا</a></li>
+          {%  if frappe.session.user == 'Guest'  %}
+          <li><a class="nav-link scrollto" href="/login"> دخول</a></li>
+          {%endif%}
+          {%  if frappe.session.user != 'Guest'  %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{  frappe.session.user}}
+
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="/me">حسابي</a></li>
+              <li><a class="dropdown-item" target="_blank" href="/app">لوحة التحكم</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/?cmd=web_logout">خروج</a></li>
+            </ul>
+          </li>
+
+          {%endif%}
+ 
+        </ul>
+
+
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+{% block page_content %}{% endblock %}
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-info">
+ 
+
+              <h3>منصة عذب لتعليم القران الكريم</h3>
+              <p class="pb-3"><em>
+                جزى الله  بالخيرات عناأئمة ..  لنا نقلو القرآن عذبا وسلسلا!
+              </em></p>
+              <p>
+                {{doc.address}}
+                <br>
+                <br><br>
+                <strong>جوال:</strong> {{doc.mobile}}<br>
+                <strong>ايميل:</strong> {{doc.email}}<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="{{doc.twitter}}" class="twitter"><i class='bx bx-x'></i></a>
+                <a href="{{doc.facebook}}" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="{{doc.instagram}}" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="{{doc.youtube}}" class="google-plus"><i class="bx bxl-youtube"></i></a>
+                <a href="{{doc.linkedin}}" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-lg-4 col-md-12 d-flex justify-content-center footer-links">
+            <ul>
+              <li><a href="#hero">الرئيسية</a><i class="bx bx-chevron-left"></i> </li>
+              <li><a href="#about">عن عذب</a><i class="bx bx-chevron-left"></i> </li>
+              <li><a href="#features">لماذا عذب ؟</a><i class="bx bx-chevron-left"></i> </li>
+              <li><a href="#pricing">اﻷسعار</a><i class="bx bx-chevron-left"></i> </li>
+              <li><a href="#contact">اتصل بنا</a><i class="bx bx-chevron-left"></i> </li>
+
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>نشرتنا اﻹخبارية</h4>
+            <p>اشترك في نشرتنا اﻹخبارية ليصلك احدث العروض واﻷخبار</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="اشتراك">
+            </form>
+            <div class="app-button-contain mt-5">
+              <h3 class="mb-3">حمل التطبيق</h3>
+              <a href="{{doc.google_store}}" target="_blank" class="download-btn" >
+                  <img src="https://tartilonline.com/site/assets/images/icons/google_btn.svg" loading="lazy" alt="">
+              </a>
+  
+              <a href="{{doc.apple_store}}" target="_blank" class="download-btn">
+                  <img src="https://tartilonline.com/site/assets/images/icons/apple_btn.svg" loading="lazy" alt="">
+              </a>
+          </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; جميع الحقوق محفوظة: <strong><span>عذب لتعليم القران الكريم</span></strong>. 
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/ -->
+        برمجة وتصميم <a href="https://dl.sa/">القيادة الرقمية</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="/assets/athb/theme/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="/assets/athb/theme/vendor/aos/aos.js"></script>
+  <script src="/assets/athb/theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/athb/theme/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/assets/athb/theme/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/assets/athb/theme/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/assets/athb/theme/js/main.js"></script>
+  <script>frappe.csrf_token="{{frappe.session.csrf_token}}"</script>
+
+  <script type="text/javascript" src="/assets/frappe/dist/js/libs.bundle.LLRFRX7M.js"></script>
+	
+	<script type="text/javascript" src="/assets/frappe/dist/js/desk.bundle.SJKES4UQ.js"></script>
+	
+	<!-- <script type="text/javascript" src="/assets/frappe/dist/js/list.bundle.UA2ETGOF.js"></script>
+	
+	<script type="text/javascript" src="/assets/frappe/dist/js/form.bundle.IFBRJYQN.js"></script>  -->
+	
+<script type="text/javascript" src="/assets/frappe/dist/js/controls.bundle.DNTF2UAM.js"></script>
+	
+	<script type="text/javascript" src="/assets/frappe/dist/js/report.bundle.IE5Y4FDN.js"></script>
+	
+	<script type="text/javascript" src="/assets/frappe/dist/js/telemetry.bundle.ZJBT5ETW.js"></script>
+	
+	<script type="text/javascript" src="/assets/erpnext/dist/js/erpnext.bundle.HOUSW5SA.js"></script>
+	{% block base_scripts %}
+	<!-- js should be loaded in body! -->
+	<script>
+
+    
+
+		frappe.boot = {{ boot }}
+		// for backward compatibility of some libs
+		frappe.sys_defaults = frappe.boot.sysdefaults;
+
+
+
+	</script>
+	{{ include_script('frappe-web.bundle.js') }}
+
+
+	{% endblock %}
+  
+</body>
+
+</html>

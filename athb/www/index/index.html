@@ -1,0 +1,440 @@
+
+
+
+{% extends "templates/athb_base.html" %}
+{% block page_content %}
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
+          <div data-aos="zoom-out">
+            <h1>مرحبا بك في منصة <br/><span>عذب لتعليم القران الكريم</span></h1>
+            <h2>جزى الله عنا بالخيرات عناأئمة ..  لنا نقلو القرآن عذبا وسلسلا!</h2>
+            <div class="text-center text-lg-start">
+              <a href="/teacher-form" class="btn-get-started scrollto">أنضم كمعلم الآن</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
+          <img src="/assets/athb/theme/img/mobil.png" class="img-fluid animated" alt="">
+          <div class="app-button-contain ">
+            <a href="{{doc.google_store}}" target="_blank" class="download-btn" >
+                <img src="https://tartilonline.com/site/assets/images/icons/google_btn.svg" loading="lazy" alt="">
+            </a>
+
+            <a href="{{doc.apple_store}}" target="_blank" class="download-btn">
+                <img src="https://tartilonline.com/site/assets/images/icons/apple_btn.svg" loading="lazy" alt="">
+            </a>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+      <defs>
+        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+      </defs>
+      <g class="wave1">
+        <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+      </g>
+      <g class="wave2">
+        <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+      </g>
+      <g class="wave3">
+        <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+      </g>
+    </svg>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container-fluid">
+
+      
+
+        <div class="row">
+          <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch" data-aos="fade-right">
+            <a href="{{doc.info_url}}" class="glightbox play-btn mb-4"></a>
+          </div>
+
+          <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="fade-left">
+            <h3>منصة عذب لتعليم القران الكريم  </h3>
+            <p> {{doc.about}}</p>
+
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
+              <div class="icon"><i class="bx bx-fingerprint"></i></div>
+              <h4 class="title">رؤيتنا : </h4>
+              <p class="description">{{doc.our_vision}}</p>
+            </div>
+
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
+              <div class="icon"><i class="bx bx-gift"></i></div>
+              <h4 class="title">رسالتنا:</h4>
+              <p class="description">{{doc.our_message}} </p>
+            </div>
+
+ 
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
+              <div class="app-button-contain">
+                <a href="{{doc.google_store}}" target="_blank" class="download-btn">
+                    <img src="https://tartilonline.com/site/assets/images/icons/google_btn.svg" loading="lazy" alt="">
+                </a>
+  
+                <a href="{{doc.apple_store}}" target="_blank" class="download-btn">
+                    <img src="https://tartilonline.com/site/assets/images/icons/apple_btn.svg" loading="lazy" alt="">
+                </a>
+            </div>
+  
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>لماذا عذب</h2>
+          <p>مايميز عذب لتعليم القران الكريم</p>
+        </div>
+
+        <div class="row" data-aos="fade-left">
+          {% for feature in doc.features %}
+
+          <div class="col-lg-3 col-md-4 mt-3">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="50">
+              <i class="{{feature.icon}}" style="color: {{feature.icon_color}};"></i>
+   
+              <h3>{{feature.title}}</h3>
+            </div>
+          </div>
+          {% endfor %}
+
+   
+
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+      <div class="container">
+
+        <div class="row" data-aos="fade-up">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="count-box">
+              <i class='bx bx-group'></i>
+              <span data-purecounter-start="0" data-purecounter-end="{{doc.count_teachers}}" data-purecounter-duration="1" class="purecounter"></span>
+              <p>معلم ومعلمة</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+            <div class="count-box">
+              <i class="bi bi-people"></i>
+              <span data-purecounter-start="0" data-purecounter-end="{{doc.count_students}}" data-purecounter-duration="1" class="purecounter"></span>
+              <p>طالب وطالبة</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+            <div class="count-box">
+              <i class="bi bi-headset"></i>
+              <span data-purecounter-start="0" data-purecounter-end="{{doc.count_session}}" data-purecounter-duration="1" class="purecounter"></span>
+              <p>حصة</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+            <div class="count-box">
+              <i class='bx bx-map-alt' ></i>
+              <span data-purecounter-start="0" data-purecounter-end="{{doc.count_country}}" data-purecounter-duration="1" class="purecounter"></span>
+              <p>دولة</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
+    <!-- ======= Details Section ======= -->
+    <section id="details" class="details">
+      <div class="container">
+
+        <div class="row content">
+          <div class="col-md-4" data-aos="fade-right">
+            <img src="/assets/athb/theme/img/img3.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-8 pt-4" data-aos="fade-up">
+            <h3>
+              تجويد القرآن الكريم: طريقك لإتقان تلاوة كلام الله
+
+            </h3>
+            <p class="fst-italic">
+              التجويد، لغةً، هو التحسين والإتقان. أما اصطلاحًا، فهو "إخراج كل حرف من مخرجه وإعطاؤه حقه ومستحقه من الصفات والأحكام".
+
+              بمعنى آخر، هو علمٌ يُعنى بضبط مخارج الحروف وصفاتها عند قراءة القرآن الكريم،
+              ليُقرأ بأحسن وجهٍ وأتمه، مُتَمثلاً فيه أحكام التجويد التي وضعها علماءٌ مُتخصصون.
+              أهمية تجويد القرآن الكريم:
+            </p>
+            <ul>
+              <li><i class="bi bi-check"></i> فهم معنى القرآن الكريم: يُساعد تجويد القرآن الكريم على فهم معانيه بدقة، لأنّ لكل حرفٍ من حروف القرآن الكريم مخرجٌ وصِفاتٌ تُؤثّر في معناه.</li>
+              <li><i class="bi bi-check"></i>حفظ القرآن الكريم: يُسهّل تجويد القرآن الكريم حفظه، لأنّ القارئ المُجيد يُدرك مواضع المد والقصر والوقف والإبتداء، فيُرتّب حروف الكلمات في ذاكرته بشكلٍ صحيح.</li>
+              <li><i class="bi bi-check"></i> خشوع القلب وتدبّره: يُساعد تجويد القرآن الكريم على خشوع القلب وتدبّره في معانيه، لأنّ القارئ المُجيد يُحسّن من جمال تلاوته، مما يُؤثّر في مشاعره ويُنعكس على قلبه.</li>
+              <li><i class="bi bi-check"></i> داء العبادات بشكلٍ صحيح: يُساعد تجويد القرآن الكريم على أداء العبادات بشكلٍ صحيح، مثل الصلاة، لأنّ الصلاة تتضمن قراءة القرآن الكريم.</li>
+            </ul>
+            <p>
+              منصة عذب لتعليم القران الكريم هي أفضل طريقة لتعلم تجويد القرآن الكريم، لأنّها تُتيح للطالب التعلّم من شيخٍ مُتخصصٍ مُباشرةً.
+            </p>
+          </div>
+        </div>
+
+        <div class="row content">
+          <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
+            <img src="/assets/athb/theme/img/img2.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
+            <h3>حفظ القرآن الكريم: رحلة مباركة نحو نور الله            </h3>
+            <p class="fst-italic">
+              حفظ القرآن الكريم هو شرف عظيم وفضل من الله تعالى يناله المسلمون المُجتهدون،
+ويهدف إلى حفظ كلام الله تعالى في الصدور،
+وتدبره، والعمل به،
+والتمسك به في جميع أحوال الحياة.
+            </p>
+            <p>
+              فضل حفظ القرآن الكريم:
+              <br/>
+              شرف عظيم: يُعدّ حافظ القرآن الكريم من أكرم الناس عند الله تعالى، كما ورد في الحديث النبوي الشريف: "اقرأوا القرآن وادرسوه، فإنّ في ذلك شفاءً للصدور ونوراً للقلب وبصيرةً للعين".
+
+              <br/>
+              قرب من الله تعالى: يُقرب حافظ القرآن الكريم من الله تعالى، ويكون له شفيعاً يوم القيامة، كما ورد في الحديث النبوي الشريف: "إنّ القرآن الكريم هو شفاءٌ في الصدر ونورٌ في القلب وبصيرةٌ للعين، ومن قرأ القرآن الكريم وتعلمه فهو مع الله تعالى".
+              <br/>
+              دخول الجنة: يُعدّ حفظ القرآن الكريم من أسباب دخول الجنة، كما ورد في الحديث النبوي الشريف: "من قرأ القرآن الكريم وعمل بما فيه دخل الجنة".
+              <br/>
+              الأجر العظيم: يُؤجر حافظ القرآن الكريم أجراً عظيماً عند الله تعالى، كما ورد في الحديث النبوي الشريف: "من قرأ حرفاً من القرآن الكريم فله عشر حسنات، والحسنة تضاعف إلى سبعمائة حسنة".
+
+            </p>
+            <p>
+              حفظ القرآن الكريم هو رحلة مباركة تجلبُ الخير والبركة في الدنيا والآخرة،
+
+            </p>
+          </div>
+        </div>
+
+     
+
+   
+
+      </div>
+    </section><!-- End Details Section -->
+
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+            {% for testimonial in doc.testimonials %}
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <h3> {{testimonial.person_name}}</h3>
+                <h4> {{testimonial.person_jop}}</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  {{testimonial.body}}
+               
+
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+            {% endfor %}
+      
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+
+
+    <!-- ======= Pricing Section ======= -->
+    <section id="pricing" class="pricing">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>الأسعار</h2>
+          <p>أقوى العروض</p>
+        </div>
+
+        <div class="row" data-aos="fade-left">
+          {% for price in pricing %}
+          <div class="col-lg-3 col-md-6">
+              {% if price['high_light'] == "featured" %}
+              {% set featured = "featured" %}
+              {% else %}
+              {% set featured = "" %}
+              {% endif %}
+            <div class="box {{featured}}" data-aos="zoom-in" data-aos-delay="100">
+              {% if price['high_light'] == "advanced" %}
+              <span class="advanced">فعالة</span>
+              {% endif %}
+              <h3>{{price['title']}}</h3>
+              <h4>{{price['price']}}<sup>ريال</sup></h4>
+             
+              <ul>
+                {% for detail in price['details'] %}
+                <li> {{detail['title']}}</li>
+                {% endfor %}
+            </ul>
+           
+            </div>
+          </div>
+          {% endfor %}
+    
+
+        </div>
+
+      </div>
+    </section><!-- End Pricing Section -->
+
+    <!-- ======= F.A.Q Section ======= -->
+    <section id="faq" class="faq section-bg">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>مجموعة من الأسئلة الشائعة على منصة عذب من خلال المستخدمين
+
+          </h2>
+          <p>الأسئلة الشائعة
+          </p>
+        </div>
+
+        <div class="faq-list">
+        
+          <ul>
+          
+            {% for fa in doc.faq %}
+
+            {% if loop.index == 1 %}
+            {% set show = "show" %}
+            {% set status_collapse = "collapse" %}
+            {% else %}
+            {% set show = "" %}
+            {% set status_collapse = "collapsed" %}
+
+            {% endif %}
+
+            <li data-aos="fade-up">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="{{status_collapse}}" data-bs-target="#{{fa.name}}">
+                {{fa.title}} 
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="{{fa.name}}" class="collapse {{show}} {{is_show}}" data-bs-parent=".faq-list">
+                <p>
+                  {{fa.body}}
+                </p>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+      </div>
+    </section><!-- End F.A.Q Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>التواصل</h2>
+          <p>اتصل بنا</p>
+        </div>
+
+        <div class="row">
+
+      
+          <div class="col-lg-4" data-aos="fade-right" data-aos-delay="100">
+            <div class="info">
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>اﻹيميل:</h4>
+                <p>{{doc.email}}</p>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-lg-4" data-aos="fade-right" data-aos-delay="100">
+            <div class="info">
+        
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>اتصال:</h4>
+                <p>{{doc.mobile}}</p>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="col-lg-4" data-aos="fade-right" data-aos-delay="100">
+            <div class="info">
+              <div class="phone">
+                <i class="bi bi-geo-alt"></i>
+                <h4>العنوان:</h4>
+                <p>{{doc.address}}</p>
+              </div>
+            </div>
+
+          </div>
+          <!-- <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
+
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="الاسم" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="اﻹيميل" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="الموضوع" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="الرسالة" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">ارسال الرسالة</button></div>
+            </form>
+
+          </div> -->
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+  {% endblock %}

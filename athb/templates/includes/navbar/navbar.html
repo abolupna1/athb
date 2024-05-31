@@ -1,0 +1,76 @@
+<header id="header" class="fixed-top d-flex align-items-center" >
+    <div class="container d-flex align-items-center justify-content-between">
+      
+     
+		<div class="logo">
+			<h1><a href="/"><img src="/assets/athb/theme/img/logo.png" alt="logo"></a></h1>
+			<!-- Uncomment below if you prefer to use an image logo -->
+			<!-- <a href="index.html"><img src="/assets/athb/theme/img/logo.png" alt="" class="img-fluid"></a>-->
+		  </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="/#hero">الرئيسية</a></li>
+          <li><a class="nav-link scrollto" href="/#about">عن عذب</a></li>
+          <li><a class="nav-link scrollto" href="/#features">لماذا عذب؟</a></li>
+          <li><a class="nav-link scrollto" href="/#pricing">اﻷسعار</a></li>
+          <li><a class="nav-link scrollto" href="/#contact">اتصل بنا</a></li>
+          {%  if frappe.session.user == 'Guest'  %}
+          <li><a class="nav-link scrollto" href="/login"> دخول</a></li>
+          {%endif%}
+          {%  if frappe.session.user != 'Guest'  %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{  frappe.session.user}}
+
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="/me">حسابي</a></li>
+              <li><a class="dropdown-item" target="_blank" href="/app">لوحة التحكم</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/?cmd=web_logout">خروج</a></li>
+            </ul>
+          </li>
+
+          {%endif%}
+        </ul>
+		
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+	  <div class="form-group mb-0 hide" id="language-switcher">
+		<select class="form-control"></select>
+	</div>
+    </div>
+  </header><!-- End Header -->
+
+
+<script>
+  frappe.ready(function() {
+    // bind events here
+  
+  
+    if(frappe.session.user == "Guest"){
+      var preferred_language = frappe.get_cookie("preferred_language");
+      console.log(preferred_language);
+      if(preferred_language != "ar"){
+        document.cookie = `preferred_language=ar`;
+      }
+  
+    lang = document.getElementsByTagName('html')[0].getAttribute('lang');
+    if(lang == "ar" ){
+      document.getElementsByTagName('html')[0].dir = "rtl";
+    }
+  
+      
+  
+      
+  
+    }
+  
+  
+  
+    
+  
+  });
+  </script>
+

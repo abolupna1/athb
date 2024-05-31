@@ -1,0 +1,58 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-27 09:34:03.431883",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "person_name",
+  "column_break_ogfz",
+  "person_jop",
+  "section_break_vgox",
+  "body"
+ ],
+ "fields": [
+  {
+   "fieldname": "person_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Person Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "person_jop",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Person Jop",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ogfz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_vgox",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "body",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Body",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-05-27 09:38:53.565014",
+ "modified_by": "Administrator",
+ "module": "athb",
+ "name": "Athb Testimonials",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -14,8 +14,26 @@ app_license = "mit"
 # app_include_js = "/assets/athb/js/athb.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/athb/css/athb.css"
-# web_include_js = "/assets/athb/js/athb.js"
+web_include_css = [
+    "/assets/athb/theme/img/favicon.png",
+    "/assets/athb/theme/img/apple-touch-icon.png",
+    "/assets/athb/theme/vendor/aos/aos.css",
+    "/assets/athb/theme/vendor/bootstrap/css/bootstrap.rtl.min.css",
+    "/assets/athb/theme/vendor/bootstrap-icons/bootstrap-icons.css",
+    "/assets/athb/theme/vendor/boxicons/css/boxicons.min.css",
+    "/assets/athb/theme/vendor/glightbox/css/glightbox.min.css",
+    "/assets/athb/theme/vendor/remixicon/remixicon.css",
+    "/assets/athb/theme/vendor/swiper/swiper-bundle.min.css",
+    "/assets/athb/theme/css/style.css",
+]
+web_include_js = [
+    "/assets/athb/theme/vendor/purecounter/purecounter_vanilla.js",
+    "/assets/athb/theme/vendor/aos/aos.js",
+    "/assets/athb/theme/vendor/glightbox/js/glightbox.min.js",
+    "/assets/athb/theme/vendor/swiper/swiper-bundle.min.js",
+    "/assets/athb/theme/vendor/php-email-form/validate.js",
+    "/assets/athb/theme/js/main.js",
+    ]
 
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "athb/public/scss/website"
@@ -39,8 +57,7 @@ app_license = "mit"
 # app_include_icons = "athb/public/icons.svg"
 
 # Home Pages
-# ----------
-
+home_page = "index"
 # application home page (will override Website Settings)
 # home_page = "login"
 
@@ -48,6 +65,9 @@ app_license = "mit"
 # role_home_page = {
 # 	"Role": "home_page"
 # }
+# website_route_rules = [
+#     {"from_route": "/teacherform/index", "to_route": "teacherform"},
+# ]
 
 # Generators
 # ----------
