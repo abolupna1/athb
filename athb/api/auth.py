@@ -1,7 +1,11 @@
+import string
 import frappe
 from frappe  import _
-from datetime import datetime, timedelta
-from frappe import auth
+from datetime import datetime,timedelta
+import random
+from frappe.utils import  get_fullname,getdate
+
+
 #http://127.0.0.1:8000/api/method/athb.api.auth.sign_up?email=edom@email.com&full_name=edom
 #1996d8cd8631a4d43dda7cbcf47ff3ee1147abde5bfee69dda43a49442b008c8
 @frappe.whitelist(allow_guest=True)
@@ -128,7 +132,10 @@ def sign_in(usr, pwd):
     # A1234@56789a athb.athb101@gmail.com  aqxy mvvl eyzm epai
 
 
-    
+
+
+
+
 
 
 
@@ -146,3 +153,91 @@ def generate_keys(user):
 	return api_secret
 
 
+@frappe.whitelist( allow_guest=True )
+def reset_password(usr):
+	user = frappe.db.get("User", {"email":usr })
+	if user:
+		if user.enabled:
+			send_verification_code(user)
+			frappe.clear_messages()
+			frappe.local.response["message"] =  {"code":1,"message":"Sent Verification Code Successfully","data":{}}
+			return
+		else:
+			frappe.clear_messages()
+			frappe.local.response["message"] =  {"code":0,"message":"Account closed","data":{}} 
+			return
+	else:
+		frappe.clear_messages()
+		frappe.local.response["message"] =  {"code":0,"message":"Email not found","data":{}} 
+		return
+
+
+
+
+	
+
+	# sendmail(doc=user,recipients=[usr],title="Reset Password",msg="test",template=template)
+
+
+
+def send_verification_code(user):
+	# Generate a random code
+
+        # Code is valid and not expired
+    
+	code = ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
+	# Create a Verification Code record
+	verification_code = frappe.new_doc("Verification Code")
+	verification_code.user = user.name
+	verification_code.code = code
+	verification_code.expiry = datetime.now() + timedelta(hours=24)  # Set expiry time (e.g., 24 hours)
+	verification_code.flags.ignore_permissions = True
+	verification_code.save()
+	context = {
+        "recipient_name": get_fullname(user.name),
+        "message_heading": "شكرا لتسجيلك في منصة عذب لعليم القران الكريم",
+        "message_body": f"Your verification code is: {code}"
+    }
+	content = frappe.render_template("athb/templates/send_email.html", context)
+
+
+	frappe.enqueue(method=	frappe.sendmail(
+        recipients=[user.email],
+		subject="Verification Code",
+        content=content,
+    ), queue='short', timeout=300)
+	
+
+
+
+
+
+
+
+@frappe.whitelist( allow_guest=True )
+def verify_code(code):
+	code_exists = frappe.db.exists("Verification Code", {"code": code})
+	if code_exists:
+		verification_code = frappe.get_doc("Verification Code", {"code": code})
+		year =getdate(verification_code.expiry).year
+		month =getdate(verification_code.expiry).month
+		day = getdate(verification_code.expiry).day
+
+		date = datetime(year, month, day) # Replace with whatever you want
+		now = datetime.now() 
+		if verification_code and date > now:
+		# Code is valid and not expired
+		
+			verification_code.delete(ignore_permissions = True)
+			frappe.db.commit()
+			frappe.clear_messages()
+			frappe.local.response["message"] =  {"code":1,"message":"Code OK","data":{}} 
+			return
+		else:
+			frappe.clear_messages()
+			frappe.local.response["message"] =  {"code":0,"message":"Code erro","data":{}} 
+			return
+	else:
+		frappe.clear_messages()
+		frappe.local.response["message"] =  {"code":0,"message":"Code erro","data":{}} 
+		return
