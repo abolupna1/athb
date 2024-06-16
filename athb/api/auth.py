@@ -253,10 +253,13 @@ def update_password(new_password:str,email:str):
 		# user.flags.ignore_permissions = True
 		# user.flags.ignore_password_policy = True
 		# user.db_update()
-		_update_password(email, new_password,logout_all_sessions=True)
-
-		frappe.clear_messages()
-		frappe.local.response["message"] =  {"code":1,"message":"Password update successfuly"}
+		if user.name not in ("Guest", "Administrator"):
+			_update_password(email, new_password,logout_all_sessions=True)
+			frappe.clear_messages()
+			frappe.local.response["message"] =  {"code":1,"message":"Password update successfuly"}
+		else:
+			frappe.clear_messages()
+			frappe.local.response["message"] =  {"code":0,"message":"User not found"} 
 	else:
 		frappe.clear_messages()
 		frappe.local.response["message"] =  {"code":0,"message":"User not found"} 
