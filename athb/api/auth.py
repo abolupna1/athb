@@ -5,6 +5,9 @@ from datetime import datetime,timedelta
 import random
 from frappe.utils import  get_fullname,getdate
 
+from frappe.utils.password import update_password as _update_password
+
+
 
 #http://127.0.0.1:8000/api/method/athb.api.auth.sign_up?email=edom@email.com&full_name=edom
 #1996d8cd8631a4d43dda7cbcf47ff3ee1147abde5bfee69dda43a49442b008c8
@@ -246,10 +249,12 @@ def update_password(new_password:str,email:str):
 	user_exists = frappe.db.exists("User", {"email": email})
 	if user_exists:
 		user = frappe.get_doc("User", {"email": email})
-		user.new_password = new_password
-		user.flags.ignore_permissions = True
-		user.flags.ignore_password_policy = True
-		user.db_update()
+		# user.new_password = new_password
+		# user.flags.ignore_permissions = True
+		# user.flags.ignore_password_policy = True
+		# user.db_update()
+		_update_password(email, new_password,logout_all_sessions=True)
+
 		frappe.clear_messages()
 		frappe.local.response["message"] =  {"code":1,"message":"Password update successfuly"}
 	else:
