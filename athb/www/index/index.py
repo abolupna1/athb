@@ -26,7 +26,6 @@ def get_context(context):
 			"high_light":price.high_light,
 			"details": details
 		})
-	print(context.pricing)
 	
 	if count > 0:
 		context.doc = frappe.get_last_doc("Landing Page")

@@ -160,15 +160,15 @@ def reset_password(usr):
 		if user.enabled:
 			send_verification_code(user)
 			frappe.clear_messages()
-			frappe.local.response["message"] =  {"code":1,"message":"Sent Verification Code Successfully","data":{}}
+			frappe.local.response["message"] =  {"code":1,"message":"Sent Verification Code Successfully"}
 			return
 		else:
 			frappe.clear_messages()
-			frappe.local.response["message"] =  {"code":0,"message":"Account closed","data":{}} 
+			frappe.local.response["message"] =  {"code":0,"message":"Account closed"} 
 			return
 	else:
 		frappe.clear_messages()
-		frappe.local.response["message"] =  {"code":0,"message":"Email not found","data":{}} 
+		frappe.local.response["message"] =  {"code":0,"message":"Email not found"} 
 		return
 
 
@@ -181,11 +181,7 @@ def reset_password(usr):
 
 
 def send_verification_code(user):
-	# Generate a random code
-
-        # Code is valid and not expired
-    
-	code = ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
+	code = ''.join(random.choices(string.digits, k=4))
 	# Create a Verification Code record
 	verification_code = frappe.new_doc("Verification Code")
 	verification_code.user = user.name
@@ -206,6 +202,7 @@ def send_verification_code(user):
 		subject="Verification Code",
         content=content,
     ), queue='short', timeout=300)
+
 	
 
 
@@ -231,13 +228,30 @@ def verify_code(code):
 			verification_code.delete(ignore_permissions = True)
 			frappe.db.commit()
 			frappe.clear_messages()
-			frappe.local.response["message"] =  {"code":1,"message":"Code OK","data":{}} 
+			frappe.local.response["message"] =  {"code":1,"message":"Code OK"} 
 			return
 		else:
 			frappe.clear_messages()
-			frappe.local.response["message"] =  {"code":0,"message":"Code erro","data":{}} 
+			frappe.local.response["message"] =  {"code":0,"message":"Code Erro"} 
 			return
 	else:
 		frappe.clear_messages()
-		frappe.local.response["message"] =  {"code":0,"message":"Code erro","data":{}} 
+		frappe.local.response["message"] =  {"code":0,"message":"Code Erro"} 
 		return
+	
+
+
+@frappe.whitelist(allow_guest=True)
+def update_password(new_password:str,email:str):
+	user_exists = frappe.db.exists("User", {"email": email})
+	if user_exists:
+		user = frappe.get_doc("User", {"email": email})
+		user.new_password = new_password
+		user.flags.ignore_permissions = True
+		user.flags.ignore_password_policy = True
+		user.db_update()
+		frappe.clear_messages()
+		frappe.local.response["message"] =  {"code":1,"message":"Password update successfuly"}
+	else:
+		frappe.clear_messages()
+		frappe.local.response["message"] =  {"code":0,"message":"User not found"} 
