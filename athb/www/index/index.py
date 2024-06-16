@@ -16,7 +16,6 @@ def get_context(context):
 			details.append({
 				'title':child_doc.title
 			})
-			print(child_doc.title)
 		
 
 
