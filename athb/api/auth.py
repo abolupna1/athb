@@ -123,14 +123,17 @@ def sign_in(usr, pwd):
 		roles = frappe.get_roles(usr) 
 		student = roles.count("Student")
 		teacher = roles.count("Teacher")
-		
 
+		role="Non"
 
-		print(result)
+		if student > 0:
+			role="Student"
+		if student == 0 and teacher > 0:
+			role ="Teacher"
 		frappe.response["message"] = {
 		"code":1,
 		"message":"Authentication Success",
-		"role": "Student"if student > 0  else "Teacher",
+		
 		"data":{
 			"first_name":user.first_name,
 			"middle_name":user.middle_name,
@@ -143,7 +146,8 @@ def sign_in(usr, pwd):
 			"sid":frappe.session.sid,
 			"api_key":user.api_key,
 			"api_secret":api_generate,
-			"email":user.email
+			"email":user.email,
+			"role": role,
 			}
 		}
 
