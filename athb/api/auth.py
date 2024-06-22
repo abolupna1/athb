@@ -91,7 +91,24 @@ def sign_up(**data):
 	# 	}
 	# 	return
 	
+		# 	roles = frappe.get_roles(usr) 
+		# # is_std = frappe.has_role("Student")
+		# print(roles)
 
+# @frappe.whitelist( allow_guest=True )
+# def logout(email:str):
+# 	user = frappe.db.get("User", {"email":email })
+
+# 	if user:
+# 		frappe.local.login_manager.logout(user=user.name)
+# 		frappe.db.commit()
+# 		frappe.clear_messages()
+# 		frappe.local.response["message"] = {
+# 		"code":0,
+# 		"message":"Authentication Error!",
+# 		"data":user
+# 		}
+# 		return
 
 
 @frappe.whitelist( allow_guest=True )
@@ -102,9 +119,18 @@ def sign_in(usr, pwd):
 		login_manager.post_login()
 		api_generate = generate_keys(frappe.session.user)
 		user = frappe.get_doc('User', frappe.session.user)
+		roles = []
+		roles = frappe.get_roles(usr) 
+		student = roles.count("Student")
+		teacher = roles.count("Teacher")
+		
+
+
+		print(result)
 		frappe.response["message"] = {
 		"code":1,
 		"message":"Authentication Success",
+		"role": "Student"if student > 0  else "Teacher",
 		"data":{
 			"first_name":user.first_name,
 			"middle_name":user.middle_name,
