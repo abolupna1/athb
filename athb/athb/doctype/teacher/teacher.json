@@ -308,8 +308,7 @@
   {
    "fieldname": "rating",
    "fieldtype": "Rating",
-   "label": "Rating",
-   "read_only": 1
+   "label": "Rating"
   },
   {
    "fieldname": "image",
@@ -320,7 +319,7 @@
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-26 11:18:00.687188",
+ "modified": "2024-06-26 16:36:46.500115",
  "modified_by": "Administrator",
  "module": "athb",
  "name": "Teacher",
@@ -350,15 +349,6 @@
    "role": "Teacher",
    "share": 1,
    "write": 1
-  },
-  {
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "All",
-   "share": 1
   }
  ],
  "search_fields": "full_name",
