@@ -6,4 +6,9 @@ from frappe.model.document import Document
 
 
 class Teacher(Document):
-	pass
+
+	def before_save(self):
+		self.full_name = f"{self.first_name} {self.father_name} {self.last_name}"
+
+	# def on_update(self):
+	# 	self.full_name = f"{self.first_name} {self.father_name} {self.last_name}"

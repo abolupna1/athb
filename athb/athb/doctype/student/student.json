@@ -1,10 +1,11 @@
 {
  "actions": [],
- "allow_rename": 1,
+ "autoname": "autoincrement",
  "creation": "2024-06-12 18:15:56.020358",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "details_section",
   "first_name",
   "last_name",
   "birth_date",
@@ -16,7 +17,9 @@
   "full_name",
   "gender",
   "online",
-  "enabled"
+  "enabled",
+  "favorite_teachers_tab",
+  "favorite_teachers"
  ],
  "fields": [
   {
@@ -71,7 +74,8 @@
    "fieldname": "full_name",
    "fieldtype": "Data",
    "label": "Full Name",
-   "reqd": 1
+   "no_copy": 1,
+   "read_only": 1
   },
   {
    "fieldname": "gender",
@@ -91,14 +95,31 @@
    "fieldname": "enabled",
    "fieldtype": "Check",
    "label": "Enabled"
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "favorite_teachers_tab",
+   "fieldtype": "Tab Break",
+   "label": "Favorite Teachers"
+  },
+  {
+   "fieldname": "favorite_teachers",
+   "fieldtype": "Table",
+   "label": "Favorite Teachers",
+   "options": "Favorite Teachers"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-12 20:08:59.425062",
+ "modified": "2024-06-26 10:57:50.505664",
  "modified_by": "Administrator",
  "module": "athb",
  "name": "Student",
+ "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [
   {
@@ -126,7 +147,10 @@
    "write": 1
   }
  ],
+ "search_fields": "full_name",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "full_name"
 }

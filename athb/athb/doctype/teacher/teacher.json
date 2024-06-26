@@ -1,6 +1,6 @@
 {
  "actions": [],
- "allow_rename": 1,
+ "autoname": "autoincrement",
  "creation": "2024-05-22 13:37:34.656461",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -9,6 +9,10 @@
   "first_name",
   "nationality",
   "current_country",
+  "online",
+  "enabled",
+  "rating",
+  "image",
   "column_break_ufpn",
   "father_name",
   "last_name",
@@ -42,7 +46,10 @@
   "wish_hafs",
   "wish_warsh",
   "preferences_tab",
-  "working_hours_day"
+  "working_hours_day",
+  "tab_5_tab",
+  "teacher_rate_section",
+  "teacher_rate"
  ],
  "fields": [
   {
@@ -169,7 +176,6 @@
    "fieldtype": "Data",
    "in_preview": 1,
    "in_standard_filter": 1,
-   "is_virtual": 1,
    "label": "Full Name"
   },
   {
@@ -270,14 +276,55 @@
    "fieldtype": "Data",
    "label": "Father Name",
    "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "online",
+   "fieldtype": "Check",
+   "label": "online"
+  },
+  {
+   "default": "0",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "tab_5_tab",
+   "fieldtype": "Tab Break",
+   "label": "Teacher Rate"
+  },
+  {
+   "fieldname": "teacher_rate_section",
+   "fieldtype": "Section Break",
+   "label": "Teacher Rate"
+  },
+  {
+   "fieldname": "teacher_rate",
+   "fieldtype": "Table",
+   "label": "Teacher Rate",
+   "options": "Teacher Rate"
+  },
+  {
+   "fieldname": "rating",
+   "fieldtype": "Rating",
+   "label": "Rating",
+   "read_only": 1
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "image"
   }
  ],
+ "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-22 05:06:19.665407",
+ "modified": "2024-06-26 11:18:00.687188",
  "modified_by": "Administrator",
  "module": "athb",
  "name": "Teacher",
+ "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [
   {
@@ -303,9 +350,21 @@
    "role": "Teacher",
    "share": 1,
    "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1
   }
  ],
+ "search_fields": "full_name",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "full_name"
 }
