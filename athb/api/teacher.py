@@ -4,7 +4,7 @@ from frappe.utils.data import ceil
 no_cache = 1
 
 #http://127.0.0.1:8000/api/method/athb.api.teacher.getFavoritTeachers
-@frappe.whitelist(allow_guest=True)
+@frappe.whitelist()
 def getFavoritTeachers(user_name:str):
     try:
         teachers =  frappe.db.get_list('Teacher',filters={'enabled': True},
